@@ -72,17 +72,31 @@
                     <li>Designed a robust <strong>PostgreSQL</strong> schema to handle complex activity metrics and user training logs.</li>
                     <li>Engineered a responsive <strong>React</strong> dashboard with a focus on data visualization and mobile user experience.</li>
                 </ul>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="space-y-2">
-                        <img src="images/laceup-dashboard.png" alt="Dashboard" class="rounded-lg border border-gray-200 shadow-sm w-full h-48 object-cover">
-                        <p class="text-[11px] text-center text-gray-400 font-medium italic">Dashboard Interface</p>
+                <div class="space-y-6">
+                    <div class="space-y-2 border border-gray-100 rounded-xl p-2 bg-gray-50 shadow-inner">
+                        <img src="images/lace_up_stats.png" alt="Analytics Dashboard" class="rounded-lg w-full h-auto object-cover hover:opacity-95 transition">
+                        <p class="text-[11px] text-center text-gray-400 font-medium italic">
+                            Figure 1: Comprehensive Analytics Dashboard fetching and aggregating 12-week running metrics (Volume & Pace) via Strava API.
+                        </p>
                     </div>
                     <div class="space-y-2">
-                        <img src="images/laceup-mobile.png" alt="Mobile View" class="rounded-lg border border-gray-200 shadow-sm w-full h-48 object-cover">
-                        <p class="text-[11px] text-center text-gray-400 font-medium italic">Mobile Responsive View</p>
+                            <img src="images/lace_up_data.png" alt="Detailed Activity Logs" class="rounded-lg border border-gray-200 shadow-sm w-full h-48 object-cover hover:scale-[102%] transition duration-300">
+                            <p class="text-[11px] text-center text-gray-400 font-medium italic">
+                                Figure 3: Detailed Activity Logs managing structured activity data (type, distance, heart rate) using a relational PostgreSQL database.
+                            </p>
+                    </div>
+                
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <img src="images/lace_up_map.png" alt="GPS Route Trace" class="rounded-lg border border-gray-200 shadow-sm w-full h-48 object-cover hover:scale-[102%] transition duration-300">
+                            <p class="text-[11px] text-center text-gray-400 font-medium italic">
+                                Figure 2: Interactive Map implementing Leaflet.js to visualize accurate GPS polyline data parsed from activity streams.
+                            </p>
+                        </div>
+                
                     </div>
                 </div>
+
             </div>
         </section>
 
