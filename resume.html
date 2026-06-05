@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Preview Jingsheng (Andrew) Lu's resume.">
+    <title>Andrew Lu | Resume Preview</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen overflow-hidden bg-zinc-950 text-white">
+    <header class="flex h-14 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-4">
+        <a href="index.html" class="text-sm font-bold text-white transition hover:text-emerald-300">Andrew Lu</a>
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="text-sm font-semibold text-zinc-300 transition hover:text-white">Back</a>
+            <a href="Resume_JingshengLu.pdf" class="rounded-md bg-emerald-500 px-4 py-2 text-sm font-bold text-zinc-950 transition hover:bg-emerald-400">Download PDF</a>
+        </div>
+    </header>
+
+    <main class="h-[calc(100vh-3.5rem)] bg-zinc-900">
+        <object data="Resume_JingshengLu.pdf" type="application/pdf" class="h-full w-full">
+            <iframe src="Resume_JingshengLu.pdf" title="Andrew Lu resume preview" class="h-full w-full border-0"></iframe>
+            <div class="flex h-full flex-col items-center justify-center gap-4 px-5 text-center">
+                <p class="max-w-md text-sm text-zinc-300">Your browser cannot preview this PDF inline.</p>
+                <a href="Resume_JingshengLu.pdf" class="rounded-md bg-emerald-500 px-4 py-2 text-sm font-bold text-zinc-950 transition hover:bg-emerald-400">Open PDF</a>
+            </div>
+        </object>
+    </main>
+</body>
+</html>
