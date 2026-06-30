@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Playwright AI QA Framework project details: Lace Up UI and API automation, deterministic evidence capture, and optional AI-assisted failure analysis.">
+  <title>Playwright AI QA Framework | Andrew Lu</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="identity" href="index.html" aria-label="Andrew Lu home">
+        <strong>Jingsheng (Andrew) Lu</strong>
+        <span>QA Automation / SDET</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" aria-label="Project navigation" data-site-nav>
+        <a href="#overview">Overview</a>
+        <a href="#system">Test Target</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#failure-intelligence">AI Analysis</a>
+        <a href="index.html">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section id="overview" class="project-hero reveal" aria-labelledby="project-title">
+      <p class="eyebrow">Featured QA Automation Project</p>
+      <h1 id="project-title">Playwright AI QA Framework</h1>
+      <p>
+        A TypeScript automation framework that validates a real running analytics product across UI and API layers, captures technical failure evidence, and uses optional AI analysis without weakening deterministic test decisions.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="https://github.com/AndrewLu3335/playwright-ai-qa-framework" target="_blank" rel="noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Automation Repository</a>
+        <a class="button" href="https://github.com/AndrewLu3335/lace_up" target="_blank" rel="noreferrer"><i class="bi bi-github" aria-hidden="true"></i>System Under Test Repository</a>
+        <a class="button" href="index.html#project"><i class="bi bi-arrow-left" aria-hidden="true"></i>Back to portfolio</a>
+      </div>
+
+      <div class="project-facts" aria-label="Project facts">
+        <div class="project-fact"><span>Framework</span><strong>Playwright Test + TypeScript</strong></div>
+        <div class="project-fact"><span>System Under Test</span><strong>Lace Up</strong></div>
+        <div class="project-fact"><span>Automation Scope</span><strong>UI + API</strong></div>
+        <div class="project-fact"><span>Failure Analysis</span><strong>Evidence + optional AI</strong></div>
+      </div>
+    </section>
+
+    <section id="system" class="section reveal" aria-labelledby="system-title">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <p class="section-kicker">System Under Test</p>
+          <h2 id="system-title">Lace Up provides real workflows and real data boundaries.</h2>
+          <p>The framework tests a running analytics application instead of relying only on a tutorial target.</p>
+        </div>
+      </div>
+
+      <div class="evidence-grid">
+        <figure class="evidence-figure">
+          <button class="image-button" type="button" data-enlarge aria-label="Open Lace Up dashboard screenshot">
+            <img src="images/laceup_stats.png" alt="Lace Up running statistics dashboard with volume, pace, and calendar data">
+          </button>
+          <figcaption>Dashboard metrics expose UI rendering, API payload, aggregation, and data consistency risks.</figcaption>
+        </figure>
+        <figure class="evidence-figure">
+          <button class="image-button" type="button" data-enlarge aria-label="Open Lace Up run records screenshot">
+            <img src="images/laceup_runrecord.png" alt="Lace Up running records page with route map, activity details, and weather data">
+          </button>
+          <figcaption>Protected run records combine authentication, backend data, route details, and third-party context.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="coverage" class="section reveal" aria-labelledby="coverage-title">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <div>
+          <p class="section-kicker">Implemented UI + API Coverage</p>
+          <h2 id="coverage-title">Backend behavior is checked against the user-visible result.</h2>
+        </div>
+      </div>
+
+      <div class="coverage-panel">
+        <ul class="coverage-list">
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Public health status</strong><span>Confirms the backend is reachable and returns the expected health payload.</span></div></li>
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Unauthenticated access control</strong><span>Verifies protected run data is rejected without a valid authenticated state.</span></div></li>
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Local E2E Session creation</strong><span>Creates reusable session state for authenticated API and browser projects.</span></div></li>
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Authenticated run-list access</strong><span>Checks the protected run-list response before UI assertions consume it.</span></div></li>
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Authenticated UI/API run-list consistency</strong><span>Compares rendered run cards and visible distance data with the API result.</span></div></li>
+          <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Unauthenticated private-route redirects</strong><span>Confirms protected browser routes send unauthenticated users back to login.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="architecture" class="section reveal" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <div>
+          <p class="section-kicker">Test Architecture</p>
+          <h2 id="architecture-title">One execution model, separate responsibilities.</h2>
+        </div>
+      </div>
+
+      <div class="architecture-flow" aria-label="Framework architecture">
+        <article class="architecture-step"><span>01</span><h3>Projects</h3><p>Dedicated authentication, API, UI, and baseline Chromium projects.</p></article>
+        <article class="architecture-step"><span>02</span><h3>Session Setup</h3><p>Reusable E2E storage state keeps authenticated tests deterministic.</p></article>
+        <article class="architecture-step"><span>03</span><h3>Specs</h3><p>Tests express behavior and cross-layer assertions without UI implementation detail.</p></article>
+        <article class="architecture-step"><span>04</span><h3>Evidence Fixture</h3><p>Page, navigation, request, response, and console evidence is captured on failure.</p></article>
+        <article class="architecture-step"><span>05</span><h3>Reports</h3><p>HTML, JSON, screenshots, video, traces, and optional AI diagnosis support triage.</p></article>
+      </div>
+    </section>
+
+    <section id="failure-intelligence" class="section reveal" aria-labelledby="ai-title">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <div>
+          <p class="section-kicker">AI Failure Intelligence</p>
+          <h2 id="ai-title">AI adds investigation context, not test authority.</h2>
+          <p>Playwright owns every deterministic pass/fail decision.</p>
+        </div>
+      </div>
+
+      <figure class="process-video">
+        <video controls muted playsinline preload="none" poster="images/playwright-failure-flow-poster.png" aria-label="Playwright failure intelligence workflow animation">
+          <source src="media/playwright-failure-flow.mp4" type="video/mp4">
+        </video>
+        <figcaption>A generic framework walkthrough: deterministic verdict, sanitized evidence, optional AI classification, and actionable reporting.</figcaption>
+      </figure>
+
+      <div class="narrative-grid">
+        <div>
+          <h3>Evidence before inference</h3>
+          <p class="narrative-copy">
+            The analyzer receives sanitized test errors, page state, navigation, failed requests, HTTP errors, redacted console evidence, and selected screenshots. Its output is explicitly treated as a probable diagnosis that an engineer must verify.
+          </p>
+          <div class="classification-grid" aria-label="Failure classifications">
+            <div class="classification"><strong>Test code</strong><span>Locator, assertion, synchronization, or implementation issue.</span></div>
+            <div class="classification"><strong>Application</strong><span>Product UI, backend, or runtime behavior appears defective.</span></div>
+            <div class="classification"><strong>Test data</strong><span>Account state, fixture, or required data is invalid or unavailable.</span></div>
+            <div class="classification"><strong>Environment</strong><span>Browser, dependency, configuration, or infrastructure failure.</span></div>
+            <div class="classification"><strong>Network</strong><span>Transport evidence directly blocked the tested behavior.</span></div>
+            <div class="classification"><strong>Flaky behavior</strong><span>Intermittent behavior requires reproduction and trend evidence.</span></div>
+          </div>
+        </div>
+
+        <figure class="evidence-figure">
+          <button class="image-button" type="button" data-enlarge aria-label="Open AI failure report example">
+            <img src="images/ai-failure-report-example.png" alt="Playwright failure intelligence report with technical evidence and recommended actions">
+          </button>
+          <figcaption>Framework demonstration: this generic failure report illustrates evidence-based diagnosis and is not labeled as a Lace Up execution.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="evidence-title">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <div>
+          <p class="section-kicker">Evidence And Diagnostics</p>
+          <h2 id="evidence-title">Failures retain the context needed to reproduce them.</h2>
+        </div>
+      </div>
+
+      <div class="project-facts">
+        <div class="project-fact"><span>Page Context</span><strong>URL, title, ready state</strong></div>
+        <div class="project-fact"><span>Runtime Evidence</span><strong>Network, HTTP, console</strong></div>
+        <div class="project-fact"><span>Playwright Artifacts</span><strong>Screenshot, video, trace</strong></div>
+        <div class="project-fact"><span>Focused Retry</span><strong>Reproduction command</strong></div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="decisions-title">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <div>
+          <p class="section-kicker">Implementation Decisions</p>
+          <h2 id="decisions-title">The framework keeps intelligence useful and bounded.</h2>
+        </div>
+      </div>
+
+      <ol class="decision-list">
+        <li><strong>Separate verdict from diagnosis</strong><span>Deterministic assertions remain the only pass/fail authority.</span></li>
+        <li><strong>Collect evidence only when needed</strong><span>Failure-specific capture reduces noise in successful runs.</span></li>
+        <li><strong>Sanitize before analysis</strong><span>URLs and common credential-like console values are removed or redacted.</span></li>
+        <li><strong>Require causal network evidence</strong><span>An element-not-found error alone cannot become a network classification.</span></li>
+      </ol>
+    </section>
+
+    <section class="section reveal" aria-labelledby="run-title">
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <div>
+          <p class="section-kicker">Repositories And Reproduction</p>
+          <h2 id="run-title">Inspect the framework and the product it validates.</h2>
+        </div>
+      </div>
+
+      <div class="narrative-grid">
+        <div>
+          <h3>Source repositories</h3>
+          <div class="repo-links">
+            <a href="https://github.com/AndrewLu3335/playwright-ai-qa-framework" target="_blank" rel="noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Automation Repository</a>
+            <a href="https://github.com/AndrewLu3335/lace_up" target="_blank" rel="noreferrer"><i class="bi bi-github" aria-hidden="true"></i>System Under Test Repository</a>
+          </div>
+        </div>
+        <div>
+          <h3>Focused execution</h3>
+          <pre class="code-block"><code>npm run test:laceup:api
+npm run test:laceup:ui
+npm run ai:analyze-failure</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-shell">
+      <span>&copy; 2026 Jingsheng (Andrew) Lu</span>
+      <div class="footer-links"><a href="index.html">Portfolio</a><a href="#main-content">Back to top</a></div>
+    </div>
+  </footer>
+
+  <dialog class="image-dialog" data-image-dialog aria-label="Expanded project evidence">
+    <button class="dialog-close" type="button" aria-label="Close image viewer" data-dialog-close><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+    <img alt="">
+  </dialog>
+</body>
+</html>
