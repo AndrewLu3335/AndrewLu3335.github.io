@@ -187,6 +187,7 @@
 
                         <ul class="mt-5 grow space-y-3 pl-5 text-sm text-zinc-600 list-disc">
                             <li>Implemented Strava OAuth 2.0 authentication and activity synchronization into a PostgreSQL-backed data model.</li>
+                            <li>Added a debug-gated local E2E session bootstrap so external Playwright tests can validate protected APIs without storing Strava credentials.</li>
                             <li>Built scheduled background jobs with Celery Beat and Redis in Docker Compose to refresh activities asynchronously.</li>
                             <li>Created dashboards for mileage, pace, cadence, stride length, route review, and enriched weather context.</li>
                             <li>Deployed the Dockerized Django API to AWS ECS/Fargate and hosted the React production build through S3 and CloudFront.</li>
@@ -198,13 +199,13 @@
                             <div>
                                 <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">AI-Assisted QA Automation</p>
                                 <h3 class="mt-2 text-2xl font-extrabold tracking-tight text-zinc-950">Playwright AI Failure Intelligence Framework</h3>
-                                <p class="mt-1 text-sm font-semibold text-zinc-600">Evidence-driven E2E testing and post-failure diagnosis</p>
+                                <p class="mt-1 text-sm font-semibold text-zinc-600">Evidence-driven UI/API testing and post-failure diagnosis</p>
                             </div>
                             <a href="https://github.com/AndrewLu3335/playwright-ai-qa-framework" target="_blank" rel="noreferrer" class="inline-flex w-fit rounded-md bg-zinc-950 px-4 py-2 text-sm font-bold text-white transition hover:bg-zinc-700">Source Code</a>
                         </div>
 
                         <p class="mt-5 text-sm text-zinc-600">
-                            A TypeScript and Playwright framework that keeps test validation deterministic while adding an AI-assisted failure intelligence layer for evidence-based classification, diagnosis, and faster reproduction.
+                            A TypeScript and Playwright UI/API framework that keeps test validation deterministic while adding an AI-assisted failure intelligence layer for evidence-based classification, diagnosis, and faster reproduction.
                         </p>
 
                         <div class="mt-5 rounded-lg border border-zinc-200 bg-white p-5">
@@ -251,7 +252,7 @@
                             <li>Captures sanitized page state, navigation, failed requests, HTTP errors, and redacted browser console evidence through a shared fixture.</li>
                             <li>Classifies failures across test code, application, test data, environment, network, and flaky behavior.</li>
                             <li>Generates a probable root cause, observed state, focused debugging actions, and an exact Playwright reproduction command.</li>
-                            <li>Uses Page Objects, separated test data, smoke/regression tags, screenshots, videos, traces, and embedded HTML reports.</li>
+                            <li>Extends beyond UI automation with dependency-based Django Session setup and read-only Lace Up API coverage for health, access control, and authenticated data retrieval.</li>
                         </ul>
                     </article>
                 </div>
