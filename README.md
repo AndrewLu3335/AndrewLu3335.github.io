@@ -4,6 +4,8 @@ Personal QA Automation and SDET portfolio highlighting Playwright UI/API cross-l
 
 The site includes a dedicated Playwright project page with implemented Lace Up coverage, framework architecture, failure evidence, and a manually controlled HyperFrames workflow animation.
 
+Recruiter contact is handled directly through email, GitHub, and LinkedIn.
+
 Run the static checks with:
 
 ```bash

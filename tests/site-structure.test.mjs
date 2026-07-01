@@ -106,3 +106,11 @@ test('pages do not expose credential material', () => {
   const html = pageNames.map(read).join('\n');
   assert.doesNotMatch(html, /(?:password|secret|api[_-]?key|access[_-]?token)\s*[:=]/i);
 });
+
+test('site does not publish resume files or links', () => {
+  const html = pageNames.map(read).join('\n');
+
+  assert.doesNotMatch(html, /resume|résumé/i);
+  assert.equal(existsSync(resolve(root, 'resume.html')), false);
+  assert.equal(existsSync(resolve(root, 'Resume_JingshengLu.pdf')), false);
+});
