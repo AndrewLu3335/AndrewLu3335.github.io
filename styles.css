@@ -691,6 +691,283 @@ a:hover {
   font-size: 0.92rem;
 }
 
+.report-toc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.report-toc span {
+  margin-right: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.report-toc a {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 7px 10px;
+  background: white;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.report-toc a:hover,
+.report-toc a:focus-visible {
+  border-color: var(--emerald);
+  color: var(--emerald);
+}
+
+#api-objective,
+#api-endpoints,
+#api-scenarios,
+#api-evidence,
+#api-results,
+#api-risks {
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+.api-objective {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 48px;
+  align-items: center;
+  border-top: 3px solid var(--emerald);
+  border-bottom: 1px solid var(--line);
+  padding: 26px 0;
+}
+
+.api-label {
+  margin: 0 0 8px;
+  color: var(--emerald);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.api-objective h3,
+.api-block-heading h3,
+.api-risk h3 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.api-objective > div > p:last-child,
+.api-risk > p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.api-status {
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
+}
+
+.api-status .bi {
+  color: var(--emerald);
+}
+
+.api-status span,
+.api-status strong,
+.api-status small {
+  display: block;
+}
+
+.api-status span {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.api-status strong {
+  margin-top: 3px;
+  font-size: 1.7rem;
+}
+
+.api-status small {
+  margin-top: 3px;
+  color: var(--muted);
+}
+
+.api-report-block {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.api-block-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.api-block-heading > span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.api-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+
+.api-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.api-table th,
+.api-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  vertical-align: top;
+}
+
+.api-table th {
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.api-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.api-table code,
+.api-boundary code {
+  font: 0.78rem "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.result-pass {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--emerald);
+  font-weight: 800;
+}
+
+.result-pass::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.api-boundary {
+  display: flex;
+  gap: 9px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.api-boundary .bi {
+  color: var(--emerald);
+}
+
+.api-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.api-evidence-grid article {
+  min-width: 0;
+  padding: 18px;
+}
+
+.api-evidence-grid article:nth-child(even) {
+  border-left: 1px solid var(--line);
+}
+
+.api-evidence-grid article:nth-child(n + 3) {
+  border-top: 1px solid var(--line);
+}
+
+.api-evidence-grid span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.api-evidence-grid pre {
+  overflow-x: auto;
+  margin: 11px 0 0;
+  color: #222629;
+  font: 0.8rem/1.65 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.api-results {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 36px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.api-results > div {
+  padding: 20px;
+}
+
+.api-results > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.api-results span,
+.api-results strong,
+.api-results small {
+  display: block;
+}
+
+.api-results span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.api-results strong {
+  margin-top: 7px;
+  font-size: 1.08rem;
+}
+
+.api-results small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.api-risk {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: 48px;
+  margin-top: 24px;
+  border-left: 3px solid #c48625;
+  padding: 18px 0 18px 22px;
+}
+
+.api-risk .api-label {
+  color: #9a6514;
+}
+
 .narrative-grid {
   display: grid;
   grid-template-columns: minmax(250px, 0.65fr) minmax(0, 1.35fr);
@@ -894,6 +1171,19 @@ a:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .api-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .api-results > div:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .api-results > div:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
   .project-fact:nth-child(3) {
     border-left: 0;
     border-top: 1px solid var(--line);
@@ -966,10 +1256,24 @@ a:hover {
   .impact-list,
   .evidence-grid,
   .evidence-grid.coverage,
+  .api-objective,
+  .api-risk,
   .classification-grid,
   .decision-list,
   .compact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .api-objective,
+  .api-risk {
+    gap: 22px;
+  }
+
+  .api-status {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+    padding-top: 20px;
+    padding-left: 0;
   }
 
   .compact-grid > :last-child {
@@ -1013,8 +1317,28 @@ a:hover {
   }
 
   .architecture-flow,
-  .project-facts {
+  .project-facts,
+  .api-evidence-grid,
+  .api-results {
     grid-template-columns: 1fr;
+  }
+
+  .api-evidence-grid article:nth-child(even) {
+    border-left: 0;
+  }
+
+  .api-evidence-grid article + article,
+  .api-results > div + div,
+  .api-results > div:nth-child(3),
+  .api-results > div:nth-child(4) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .api-block-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .project-fact + .project-fact,

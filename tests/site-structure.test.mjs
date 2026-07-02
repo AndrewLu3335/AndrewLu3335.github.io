@@ -82,6 +82,36 @@ test('project page documents implemented Lace Up and AI coverage', () => {
   assert.match(html, /github\.com\/AndrewLu3335\/lace_up/);
 });
 
+// Protects the implemented API report structure and its evidence-based claims.
+test('project page presents traceable API execution results', () => {
+  const html = read('playwright-ai.html');
+
+  for (const anchor of [
+    'api-objective',
+    'api-endpoints',
+    'api-scenarios',
+    'api-evidence',
+    'api-results',
+    'api-risks',
+  ]) {
+    assert.match(html, new RegExp(`(?:id|href)="(?:#)?${anchor}"`));
+  }
+
+  for (const requiredText of [
+    'API Test Results',
+    'GET /api/health/',
+    'GET /api/runs/',
+    'POST /api/test/login/',
+    '4 / 4 passed',
+    'Shallow liveness check',
+    'Risk conclusion',
+    'Write operations are not covered',
+    'npm run test:api',
+  ]) {
+    assert.ok(html.includes(requiredText), `playwright-ai.html must include: ${requiredText}`);
+  }
+});
+
 test('project page embeds the failure intelligence walkthrough without autoplay', () => {
   const html = read('playwright-ai.html');
 

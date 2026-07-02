@@ -28,7 +28,7 @@
       <nav class="site-nav" aria-label="Project navigation" data-site-nav>
         <a href="#overview">Overview</a>
         <a href="#system">Test Target</a>
-        <a href="#coverage">Coverage</a>
+        <a href="#coverage">API Results</a>
         <a href="#architecture">Architecture</a>
         <a href="#failure-intelligence">AI Analysis</a>
         <a href="index.html">Portfolio</a>
@@ -56,6 +56,16 @@
         <div class="project-fact"><span>Failure Analysis</span><strong>Evidence + optional AI</strong></div>
       </div>
     </section>
+
+    <nav class="report-toc reveal" aria-label="API test report sections">
+      <span>API report</span>
+      <a href="#api-objective">Objective</a>
+      <a href="#api-endpoints">Endpoints</a>
+      <a href="#api-scenarios">Scenarios</a>
+      <a href="#api-evidence">Evidence</a>
+      <a href="#api-results">Results</a>
+      <a href="#api-risks">Risks</a>
+    </nav>
 
     <section id="system" class="section reveal" aria-labelledby="system-title">
       <div class="section-heading">
@@ -87,12 +97,50 @@
       <div class="section-heading">
         <span class="section-number">02</span>
         <div>
-          <p class="section-kicker">Implemented UI + API Coverage</p>
-          <h2 id="coverage-title">Backend behavior is checked against the user-visible result.</h2>
+          <p class="section-kicker">API Test Results</p>
+          <h2 id="coverage-title">Every result is tied to an executable check.</h2>
+          <p>Verified locally against the running Lace Up Docker environment.</p>
         </div>
       </div>
 
-      <div class="coverage-panel">
+      <article id="api-objective" class="api-objective">
+        <div>
+          <p class="api-label">Test objective</p>
+          <h3>Validate availability, authorization boundaries, and authenticated reads before checking the UI.</h3>
+          <p>The API project uses Playwright request contexts and a reusable Django Session. The browser project then compares the same run-list response with the rendered records.</p>
+        </div>
+        <div class="api-status" aria-label="API suite status">
+          <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+          <span>Verified execution</span>
+          <strong>4 / 4 passed</strong>
+          <small>1 setup + 3 API tests &middot; Jul 2, 2026</small>
+        </div>
+      </article>
+
+      <div id="api-endpoints" class="api-report-block">
+        <div class="api-block-heading">
+          <div><p class="api-label">Endpoint inventory</p><h3>Behavior and assertions</h3></div>
+          <span>3 endpoint paths</span>
+        </div>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead><tr><th>Request</th><th>Access</th><th>Primary assertion</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td><code>GET /api/health/</code></td><td>Public</td><td><code>200</code> and <code>{"status":"ok"}</code></td><td><span class="result-pass">Passed</span></td></tr>
+              <tr><td><code>GET /api/runs/</code></td><td>Anonymous</td><td>Protected resource returns <code>401</code> or <code>403</code></td><td><span class="result-pass">Passed</span></td></tr>
+              <tr><td><code>POST /api/test/login/</code></td><td>Local E2E only</td><td><code>200</code> and reusable session state</td><td><span class="result-pass">Passed</span></td></tr>
+              <tr><td><code>GET /api/runs/</code></td><td>Authenticated</td><td><code>200</code> and a JSON array</td><td><span class="result-pass">Passed</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="api-boundary"><i class="bi bi-info-circle" aria-hidden="true"></i><strong>Shallow liveness check:</strong> <code>/api/health/</code> confirms that the backend process responds; it does not prove database, cache, or third-party service health.</p>
+      </div>
+
+      <div id="api-scenarios" class="api-report-block">
+        <div class="api-block-heading">
+          <div><p class="api-label">Key scenarios</p><h3>Coverage across the request and browser layers</h3></div>
+          <span>6 implemented checks</span>
+        </div>
         <ul class="coverage-list">
           <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Public health status</strong><span>Confirms the backend is reachable and returns the expected health payload.</span></div></li>
           <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Unauthenticated access control</strong><span>Verifies protected run data is rejected without a valid authenticated state.</span></div></li>
@@ -102,6 +150,39 @@
           <li><i class="bi bi-check-circle" aria-hidden="true"></i><div><strong>Unauthenticated private-route redirects</strong><span>Confirms protected browser routes send unauthenticated users back to login.</span></div></li>
         </ul>
       </div>
+
+      <div id="api-evidence" class="api-report-block">
+        <div class="api-block-heading">
+          <div><p class="api-label">Request and response evidence</p><h3>Sanitized examples from the verified behavior</h3></div>
+          <span>No session values shown</span>
+        </div>
+        <div class="api-evidence-grid">
+          <article><span>Public liveness</span><pre><code>GET /api/health/
+200 OK
+{"status":"ok"}</code></pre></article>
+          <article><span>Authorization boundary</span><pre><code>GET /api/runs/
+Anonymous request
+401 / 403</code></pre></article>
+          <article><span>Session bootstrap</span><pre><code>POST /api/test/login/
+200 OK
+Storage state saved locally</code></pre></article>
+          <article><span>Authenticated read</span><pre><code>GET /api/runs/
+200 OK
+Response body: JSON array</code></pre></article>
+        </div>
+      </div>
+
+      <div id="api-results" class="api-results" aria-label="API execution summary">
+        <div><span>Execution</span><strong>4 / 4 passed</strong><small>Playwright API project</small></div>
+        <div><span>Duration</span><strong>801 ms</strong><small>Local run &middot; Jul 2, 2026</small></div>
+        <div><span>Data safety</span><strong>Read-only</strong><small>No product records changed</small></div>
+        <div><span>Verdict source</span><strong>Assertions</strong><small>AI does not decide pass or fail</small></div>
+      </div>
+
+      <article id="api-risks" class="api-risk">
+        <div><p class="api-label">Risk conclusion</p><h3>The current suite proves the read path, not the complete API surface.</h3></div>
+        <p>Write operations are not covered, and the suite does not yet validate create, update, delete, rate-limit, concurrency, or live Strava integration behavior. These remain explicit follow-up risks rather than implied coverage.</p>
+      </article>
     </section>
 
     <section id="architecture" class="section reveal" aria-labelledby="architecture-title">
@@ -217,7 +298,7 @@
         </div>
         <div>
           <h3>Focused execution</h3>
-          <pre class="code-block"><code>npm run test:laceup:api
+          <pre class="code-block"><code>npm run test:api
 npm run test:laceup:ui
 npm run ai:analyze-failure</code></pre>
         </div>
