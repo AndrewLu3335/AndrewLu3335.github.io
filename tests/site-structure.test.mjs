@@ -82,6 +82,25 @@ test('project page documents implemented Lace Up and AI coverage', () => {
   assert.match(html, /github\.com\/AndrewLu3335\/lace_up/);
 });
 
+// Protects the public contract for label-routed reports and user-defined JSON templates.
+test('project page documents extensible report template routing', () => {
+  const projectHtml = read('playwright-ai.html');
+  const homeHtml = read('index.html');
+
+  for (const requiredText of [
+    'Label selects template',
+    'Metadata controls execution',
+    'JSON template controls fields',
+    'report-templates.json',
+    'api, ui, cross-layer, pagination, auth, and failure-analysis',
+    'smoke and regression never change report structure',
+  ]) {
+    assert.ok(projectHtml.includes(requiredText), `playwright-ai.html must include: ${requiredText}`);
+  }
+
+  assert.ok(homeHtml.includes('label-routed JSON report templates'));
+});
+
 // Protects the implemented API report structure and its evidence-based claims.
 test('project page presents traceable API execution results', () => {
   const html = read('playwright-ai.html');

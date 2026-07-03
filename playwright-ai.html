@@ -201,6 +201,12 @@ Response body: JSON array</code></pre></article>
         <article class="architecture-step"><span>04</span><h3>Evidence Fixture</h3><p>Page, navigation, request, response, and console evidence is captured on failure.</p></article>
         <article class="architecture-step"><span>05</span><h3>Reports</h3><p>HTML, JSON, screenshots, video, traces, and optional AI diagnosis support triage.</p></article>
       </div>
+
+      <ol class="decision-list" aria-label="Report template architecture">
+        <li><strong>Label selects template</strong><span>api, ui, cross-layer, pagination, auth, and failure-analysis route each business scenario to a stable field contract.</span></li>
+        <li><strong>Metadata controls execution</strong><span>Tags such as smoke and regression never change report structure; they remain scheduling, filtering, and priority attributes.</span></li>
+        <li><strong>JSON template controls fields</strong><span>Teams can add a validated template in <code>report-templates.json</code> without modifying the renderer or executing custom JavaScript.</span></li>
+      </ol>
     </section>
 
     <section id="failure-intelligence" class="section reveal" aria-labelledby="ai-title">
