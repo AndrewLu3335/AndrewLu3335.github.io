@@ -398,6 +398,36 @@ a:hover {
   font-size: 0.82rem;
 }
 
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.capability-item {
+  min-height: 230px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--soft);
+}
+
+.capability-item .bi {
+  color: var(--emerald);
+  font-size: 1.45rem;
+}
+
+.capability-item h3 {
+  margin: 18px 0 10px;
+  font-size: 1.02rem;
+}
+
+.capability-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .project-intro {
   display: grid;
   grid-template-columns: minmax(250px, 0.58fr) minmax(0, 1.42fr);
@@ -1151,9 +1181,14 @@ a:hover {
   .intro,
   .experience-grid,
   .project-intro,
-  .narrative-grid {
+  .narrative-grid,
+  .capability-grid {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+
+  .capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .intro-proof {
@@ -1254,6 +1289,7 @@ a:hover {
 
   .intro-proof,
   .impact-list,
+  .capability-grid,
   .evidence-grid,
   .evidence-grid.coverage,
   .api-objective,
@@ -1305,7 +1341,24 @@ a:hover {
 
   .intro h1,
   .project-hero h1 {
-    font-size: 2.35rem;
+    font-size: 2.05rem;
+  }
+
+  .intro-tagline {
+    font-size: 1.12rem;
+  }
+
+  .intro-copy {
+    font-size: 1rem;
+  }
+
+  .intro .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .intro .button {
+    width: 100%;
   }
 
   .section-heading {
